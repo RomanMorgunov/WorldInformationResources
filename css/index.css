@@ -1,0 +1,163 @@
+body {
+  font-family: "Roboto", "arial", "sans-serif";
+  background: #eaedf1;
+  color: white;
+}
+.margin-top-20 {
+  margin-top: 20px;
+}
+@media screen and (max-width: 991px) {
+  .margin-top-20px-lg {
+    margin-top: 20px;
+  }
+}
+.location {
+  display: flex;
+  align-items: center;
+}
+/*.data-block*/
+.data-block {
+  display: flex;
+  padding: 20px;
+
+  background: white;
+  color: black;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  font-family: "Noto Sans", "sans-serif";
+  font-size: 0.9rem;
+}
+.line img {
+  width: 1.2rem;
+  margin-right: 1px;
+}
+.line .years {
+  display: flex;
+  align-items: center;
+}
+.line a {
+  padding: 10px 20px;
+
+  text-decoration: none;
+  font-family: "Lato", "sans-serif";
+  background: #10cdc1;
+  color: white;
+}
+.line a:hover {
+  background: #33495f;
+}
+/*.self*/
+.self > img {
+  align-self: center;
+  justify-self: center;
+  border: 6px solid #e7e7e7;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.self .info {
+  flex-direction: column;
+}
+.self div img {
+  width: 1.2rem;
+  margin-right: 5px;
+}
+.self div .name {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 1.7rem;
+  color: #39c2d7;
+}
+.self div .mail {
+  display: flex;
+  align-items: center;
+}
+.self div .mail a {
+  text-decoration: none;
+  color: black;
+}
+.self div .mail a:hover {
+  text-decoration: underline;
+}
+.self div .social {
+  display: flex;
+  justify-content: space-between;
+}
+.self div .social a img {
+  width: 3rem;
+}
+/*.characteristic*/
+.characteristic {
+  flex-direction: column;
+}
+.characteristic > span {
+  font-size: 1.4rem;
+}
+.characteristic .hobbies > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.characteristic .hobbies {
+  display: flex;
+  justify-content: space-between;
+}
+.characteristic .hobbies span {
+  margin-top: 5px;
+  font-family: "Montserrat", "sans-serif";
+  font-size: 0.7rem;
+}
+.characteristic .hobbies div div {
+  border-radius: 50%;
+  padding: 1.55rem;
+}
+.characteristic .hobbies div div img {
+  width: 2.05rem;
+}
+.characteristic .hobbies .programming > div {
+  background: #569ce3;
+}
+.characteristic .hobbies .gaming > div {
+  background: #ff6f6f;
+}
+.characteristic .hobbies .music > div {
+  background: #f3d240;
+}
+.characteristic .hobbies .films > div {
+  background: #47cf74;
+}
+/*education and job*/
+.education-job-block {
+  flex-direction: column;
+  margin-top: 20px;
+}
+.education-job-block:first-child {
+  margin-top: 0;
+}
+.institution {
+  font-size: 1.3rem;
+  font-family: "Signika", "arial", "sans-serif";
+  color: #a3c644;
+}
+.degree {
+  font-size: 1.2rem;
+  color: #777777;
+}
+.speciality {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 1.1rem;
+  color: #10cdc1;
+}
+/*footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 1rem 1.8rem 1rem;
+
+  font-family: "Caveat", "Signika", "arial", "sans-serif";
+  color: #777777;
+  font-size: 1.7rem;
+}

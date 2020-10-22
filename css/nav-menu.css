@@ -1,0 +1,27 @@
+/*.menu*/
+header a:visited {
+  color: white;
+}
+header .menu {
+  display: flex;
+  background: #464547;
+}
+header .menu a {
+  padding: 0.1rem 1rem;
+
+  text-decoration: none;
+  font-family: "OpenSansRegular", "arial", "sans-serif";
+  font-size: 1.5rem;
+}
+header .menu a.logo {
+  font-family: "Corinthia", "Signika", "Times New Roman", "arial", "sans-serif";
+  font-size: 2.5rem;
+  color: white;
+}
+header .menu a.menu-link {
+  line-height: 3.5rem;
+}
+header .menu a.current-page, header .menu a:hover {
+  color: #27ccc0;
+  background: #373737;
+}
