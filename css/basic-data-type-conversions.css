@@ -1,0 +1,13 @@
+@media screen and (max-width: 622px) {
+  .first-img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 525px) {
+  .second-img {
+    width: 100%;
+  }
+}
+.second-img {
+  margin-top: 1rem;
+}

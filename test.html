@@ -8,11 +8,13 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/nav-menu.css">
+  <link rel="stylesheet" href="css/syntax.css" />
+  <link rel="stylesheet" href="css/test.css">
   <link rel="icon" href="images/tab-icon.png">
-  <title>.Net</title>
+  <title>Тест</title>
 </head>
 
-<body>
+<body onload="onLoad()">
   <header>
     <nav class="menu">
       <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
@@ -32,9 +34,33 @@
     </nav>
   </header>
   <main class="content">
-    <h1>Язык C# и платформа .NET Core</h1>
+    <h1>Тест на знание языка C#</h1>
+    <div id="your-result">
+      <div class="your-result-caption">Ваш результат</div>
+      <div class="your-result-text">Правильных ответов <span id="question-number-result"></span> из <span
+          id="question-amount-result"></span></div>
+    </div>
+    <div id="quiz">
+      <div class="question-info">
+        Вопрос <span id="question-number">1</span> из <span id="question-amount"></span>
+      </div>
+      <div>
+        <h2 class="question" id="question-title">&nbsp;</h2>
+        <div class="answers">
+          <a id="answers-0" onclick="toAnswer(0)" href="javascript:void(0);"></a>
+          <hr>
+          <a id="answers-1" onclick="toAnswer(1)" href="javascript:void(0);"></a>
+          <hr>
+          <a id="answers-2" onclick="toAnswer(2)" href="javascript:void(0);"></a>
+          <hr>
+          <a id="answers-3" onclick="toAnswer(3)" href="javascript:void(0);"></a>
+        </div>
+      </div>
+    </div>
   </main>
-  <footer></footer>
+  <footer>
+  </footer>
+  <script src="js/test.js"></script>
 </body>
 
 </html>

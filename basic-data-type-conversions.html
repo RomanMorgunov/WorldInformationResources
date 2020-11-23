@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav-menu.css">
+    <link rel="stylesheet" href="css/syntax.css" />
+    <link rel="stylesheet" href="css/basic-data-type-conversions.css">
+    <link rel="icon" href="images/tab-icon.png">
+    <title>Преобразования базовых типов данных</title>
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
+            <div class="dropdown">
+                <a class="current-page" href="dotnet-main.html"><span>C# и .Net Core</span></a>
+                <div class="dropdown-child">
+                    <a href="dotnet-main.html">Язык C# и платформа .NET Core</a>
+                    <a href="program-structure.html">Структура программы</a>
+                    <a href="data-types.html">Типы данных</a>
+                    <a href="arithmetic-operations.html">Арифметические операции</a>
+                    <a href="basic-data-type-conversions.html">Преобразования базовых типов данных</a>
+                    <a href="conditional-expressions.html">Условные выражения</a>
+                    <a href="conditional-constructs.html">Условные конструкции</a>
+                    <a href="test.html">C# Тест</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="content">
+        <h1>Преобразования базовых типов данных</h1>
+        <p class="text">
+            При рассмотрении типов данных указывалось, какие значения может иметь тот или иной тип и сколько байт памяти
+            он может занимать. В прошлой теме были расмотрены арифметические операции. Теперь применим операцию сложения
+            к данным разных типов:
+        </p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">a</span> = 4;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> = <span
+                            class="csharp-var">a</span> + 70;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Результатом операции вполне справедливо является число 74, как и ожидается.</p>
+        <p class="text">Но теперь попробуем применить сложение к двум объектам типа <strong>byte</strong>:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">a</span> = 4;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">b</span> = <span
+                            class="csharp-var">a</span> + 70;
+                        <span class="csharp-comment">// ошибка</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Здесь поменялся только тип переменной, которая получает результат сложения - с int на byte.
+            Однако при попытке скомпилировать программу мы получим ошибку на этапе компиляции. И если мы работаем в
+            Visual Studio, среда подчеркнет вторую строку красной волнистой линией, указывая, что в ней ошибка.</p>
+        <p class="text">При операциях мы должны учитывать диапазон значений, которые может хранить тот или иной тип. Но
+            в данном случае число 74, которое мы ожидаем получить, вполне укладывается в диапазон значений типа byte,
+            тем не менее мы получаем ошибку.</p>
+        <p class="text">Дело в том, что операция сложения (да и вычитания) возвращает значение типа int, если в операции
+            участвуют целочисленные типы данных с разрядностью меньше или равно int (то есть типы byte, short, int).
+            Поэтому результатом операции a + 70 будет объект, который имеет длину в памяти 4 байта. Затем этот объект мы
+            пытаемся присвоить переменной b, которая имеет тип byte и в памяти занимает 1 байт.</p>
+        <p class="text">И чтобы выйти из этой ситуации, необходимо применить операцию преобразования типов:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">a</span> = 4;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">b</span> = (<span
+                            class="csharp-keyword">byte</span>) (<span class="csharp-var">a</span> + 70);
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Операция преобразования типов предполагает указание в скобках того типа, к которому надо
+            преобразовать значение.</p>
+        <h2>Сужающие и расширяющие преобразования</h2>
+        <p class="text">Преобразования могут сужающие (narrowing) и расширяющие (widening). Расширяющие преобразования
+            расширяют размер объекта в памяти. Например:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">a</span> = 4;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-comment">// 0000100</span>
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">ushort</span> <span class="csharp-var">b</span> = <span
+                            class="csharp-var">a</span>;
+                        <span class="csharp-comment">// 000000000000100</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">В данном случае переменной типа ushort присваивается значение типа byte. Тип byte занимает 1
+            байт (8 бит), и значение переменной a в двоичном виде можно представить как:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                </td>
+                <td class="code">
+                    <div>00000100</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Значение типа ushort занимает 2 байта (16 бит). И при присвоении переменной b значение
+            переменной a расширяется до 2 байт</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                </td>
+                <td class="code">
+                    <div>0000000000000100</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">То есть значение, которое занимает 8 бит, <strong>расширяется</strong> до 16 бит.</p>
+        <p class="text">Сужающие преобразования, наоборот, сужают значение до типа меньшей разядности. Во втором
+            листинге статьи мы как раз имели дело с сужающими преобразованиями:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">ushort</span> <span class="csharp-var">a</span> = 4;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">b</span> = (<span
+                            class="csharp-keyword">byte</span>)<span class="csharp-var">a</span>;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Здесь переменной b, которая занимает 8 бит, присваивается значение ushort, которое занимает 16
+            бит. То есть из 0000000000000100 получаем 00000100. Таким образом, значение сужается с 16 бит (2 байт) до 8
+            бит (1 байт).</p>
+        <h2>Явные и неявные преобразования</h2>
+        <h3>Неявные преобразования</h3>
+        <p class="text">В случае с расширяющими преобразованиями компилятор за нас выполнял все преобразования данных,
+            то есть преобразования были неявными (<strong>implicit conversion</strong>). Такие преобразования не
+            вызывают каких-то затруднений. Тем не менее стоит сказать пару слов об общей механике подобных
+            преобразований.</p>
+        <p class="text">Если производится преобразование от безнакового типа меньшей разрядности к безнаковому типу
+            большой разрядности, то добавляются дополнительные биты, которые имеют значени 0. Это называется
+            <strong>дополнение нулями</strong> или zero extension.</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">a</span> = 4;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-comment">// 0000100</span>
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">ushort</span> <span class="csharp-var">b</span> = <span
+                            class="csharp-var">a</span>;
+                        <span class="csharp-comment">// 000000000000100</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Если производится преобразование к знаковому типу, то битовое представление дополняется нулями,
+            если число положительное, и единицами, если число отрицательное. Последний разряд числа содержит знаковый
+            бит - 0 для положительных и 1 для отрицательных чисел. При расширении в добавленные разряды компируется
+            знаковый бит.</p>
+        <p class="text">Рассмотрим преобразование положительного числа:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">a</span> = 4;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-comment">// 0000100</span>
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">short</span> <span class="csharp-var">b</span> = <span
+                            class="csharp-var">a</span>;
+                        <span class="csharp-comment">// 000000000000100</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <img src="images/2.7.png" alt="data type conversions" class="first-img">
+        <p class="text">Преобразование отрицательного числа:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">sbyte</span> <span class="csharp-var">a</span> = -4;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-comment">// 1111100</span>
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">short</span> <span class="csharp-var">b</span> = <span
+                            class="csharp-var">a</span>;
+                        <span class="csharp-comment">// 111111111111100</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <img src="images/2.8.png" alt="data type conversions" class="first-img">
+        <h3>Явные преобразования</h3>
+        <p class="text">При явных преобразованиях (<strong>explicit conversion</strong>) мы сами должны применить
+            операцию преобразования (операция ()). Суть операции преобразования типов состоит в том, что перед значением
+            указывается в скобках тип, к которому надо привести данное значение:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> = 4;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> = 6;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">c</span> = (<span
+                            class="csharp-keyword">byte</span>)(<span class="csharp-var">a</span> + <span
+                            class="csharp-var">b</span>);
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Расширяющие преобразования от типа с меньшей разрядностью к типу с большей разрядностью
+            компилятор поводит неявно. Это могут быть следующие цепочки преобразований:</p>
+        <p class="text"><strong>byte</strong> -&gt; <strong>short</strong> -&gt; <strong>int</strong> -&gt;
+            <strong>long</strong> -&gt; <strong>decimal</strong></p>
+        <p class="text"><strong>int</strong> -&gt; <strong>double</strong></p>
+        <p class="text"><strong>short</strong> -&gt; <strong>float</strong> -&gt; <strong>double</strong></p>
+        <p class="text"><strong>char</strong> -&gt; <strong>int</strong></p>
+        <p class="text">Все безопасные преобразования автоматические преобразования можно описать следующей таблицей:
+        </p>
+        <table class="comparison-table">
+            <tr>
+                <th>Тип</th>
+                <th>В какие типы безопасно преобразуется</th>
+            </tr>
+            <tr>
+                <td>byte</td>
+                <td>short, ushort, int, uint, long, ulong, float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>sbyte</td>
+                <td>short, int, long, float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>short</td>
+                <td>int, long, float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>ushort</td>
+                <td>int, uint, long, ulong, float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>int</td>
+                <td>long, float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>uint</td>
+                <td>long, ulong, float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>long</td>
+                <td>float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>ulong</td>
+                <td>float, double, decimal</td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>double</td>
+            </tr>
+            <tr>
+                <td>char</td>
+                <td>ushort, int, uint, long, ulong, float, double, decimal</td>
+            </tr>
+        </table>
+        <img src="images/2.9.png" alt="data type conversions" class="second-img">
+        <p class="text">В остальных случаях следует использовать явные преобразования типов.</p>
+        <p class="text">Также следует отметить, что несмотря на то, что и double, и decimal могут хранить дробные
+            данные, а decimal имеет большую разрядность, чем double, но все равно значение double нужно явно приводить к
+            типу decimal:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">double</span> <span class="csharp-var">a</span> = 4.0;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">decimal</span> <span class="csharp-var">b</span> = (<span
+                            class="csharp-keyword">decimal</span>)<span class="csharp-var">a</span>;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <h2>Потеря данных и ключевое слово checked</h2>
+        <p class="text">Рассмотрим другую ситуацию, что будет, например, в следующем случае:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> = 33;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> = 600;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">c</span> = (<span
+                            class="csharp-keyword">byte</span>)(<span class="csharp-var">a</span> + <span
+                            class="csharp-var">b</span>);
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Результатом будет число 121, так число 633 не попадает в допустимый диапазон для типа byte, и
+            старшие биты будут усекаться. В итоге получится число 121. Поэтому при преобразованиях надо это учитывать. И
+            мы в данном случае можем либо взять такие числа a и b, которые в сумме дадут число не больше 255, либо мы
+            можем выбрать вместо byte другой тип данных, например, int.</p>
+        <p class="text">Однако ситуации разные могут быть. Мы можем точно не знать, какие значения будут иметь числа a и
+            b. И чтобы избежать подобных ситуаций, в c# имеется ключевое слово checked:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-condition">try</span>
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> = 33;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> = 600;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">byte</span> <span class="csharp-var">c</span> = <span
+                            class="csharp-keyword">checked</span>(<span class="csharp-keyword">byte</span>(<span
+                            class="csharp-var">a</span>
+                        + <span class="csharp-var">b</span>));
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-var">c</span>);
+                    </div>
+                    <div>}</div>
+                    <div>
+                        <span class="csharp-condition">catch</span> (<span class="csharp-class">OverflowException</span>
+                        <span class="csharp-var">ex</span>)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-var">ex</span>.Message);
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">При использовании ключевого слова checked приложение выбрасывает исключение о переполнении.
+            Поэтому для его обработки в данном случае используется конструкция try...catch. Подробнее данную конструкцию
+            и обработку исключений мы рассмотрим позже, а пока надо знать, что в блок try мы включаем действия, в
+            которых может потенциально возникнуть ошибка, а в блоке catch обрабатываем ошибку.</p>
+    </main>
+    <footer>
+        <div class="pagination">
+            <a href="arithmetic-operations.html">Назад</a>
+            <span></span>
+            <a href="dotnet-main.html">Содержание</a>
+            <span></span>
+            <a href="conditional-expressions.html">Вперед</a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav-menu.css">
+    <link rel="stylesheet" href="css/syntax.css" />
+    <link rel="icon" href="images/tab-icon.png">
+    <title>Арифметические операции языка C#</title>
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
+            <div class="dropdown">
+                <a class="current-page" href="dotnet-main.html"><span>C# и .Net Core</span></a>
+                <div class="dropdown-child">
+                    <a href="dotnet-main.html">Язык C# и платформа .NET Core</a>
+                    <a href="program-structure.html">Структура программы</a>
+                    <a href="data-types.html">Типы данных</a>
+                    <a href="arithmetic-operations.html">Арифметические операции</a>
+                    <a href="basic-data-type-conversions.html">Преобразования базовых типов данных</a>
+                    <a href="conditional-expressions.html">Условные выражения</a>
+                    <a href="conditional-constructs.html">Условные конструкции</a>
+                    <a href="test.html">C# Тест</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="content">
+        <h1>Арифметические операции языка C#</h1>
+        <p class="text">
+            В C# используется большинство операций, которые применяются и в других языках программирования. Операции
+            представляют определенные действия над операндами - участниками операции. В качестве операнда может
+            выступать переменной или какое-либо значение (например, число). Операции бывают унарными (выполняются над
+            одним операндом), бинарными - над двумя операндами и тернарными - выполняются над тремя операндами.
+            Рассмотрим все виды операций.
+        </p>
+        <p class="text">
+            Бинарные арифметические операции:
+        </p>
+        <ul>
+            <li class="text"><strong>+</strong>
+                <p class="text">Операция сложения двух чисел:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z</span> =
+                                <span class="csharp-var">x</span> + 12; <span class="csharp-comment">// 22</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>-</strong>
+                <p class="text">Операция вычитания двух чисел:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z</span> =
+                                <span class="csharp-var">x</span> - 6; <span class="csharp-comment">// 4</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>*</strong>
+                <p class="text">Операция умножения двух чисел:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z</span> =
+                                <span class="csharp-var">x</span> * 5; <span class="csharp-comment">// 50</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>/</strong>
+                <p class="text">операция деления двух чисел:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z</span> =
+                                <span class="csharp-var">x</span> / 5; <span class="csharp-comment">// 2</span>
+                            </div>
+                            <br>
+                            <div>
+                                <span class="csharp-keyword">double</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">double</span> <span class="csharp-var">b</span> =
+                                3;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">double</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-var">a</span> / <span class="csharp-var">b</span>; <span
+                                    class="csharp-comment">// 3.33333333</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="text">При делении стоит учитывать, что если оба операнда представляют целые числа, то
+                    результат также будет округляться до целого числа:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">double</span> <span class="csharp-var">z</span> =
+                                10 / 4; <span class="csharp-comment">//результат равен 2</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="text">Несмотря на то, что результат операции в итоге помещается в переменную типа double,
+                    которая позволяет сохранить дробную часть, но в самой опеации участвуют два литерала, которые по
+                    умолчанию рассматриваются как объекты int, то есть целые числа, и результат то же будет
+                    целочисленный.</p>
+                <p class="text">Для выхода из этой ситуации необходимо определять литералы или переменные, участвующие в
+                    операции, именно как типы double или float:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">double</span> <span class="csharp-var">z</span> =
+                                10.0 / 4.0; <span class="csharp-comment">//результат равен 2.5</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>%</strong>
+                <p class="text">Операция получение остатка от целочисленного деления двух чисел:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">double</span> <span class="csharp-var">x</span> =
+                                10.0;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">double</span> <span class="csharp-var">z</span> =
+                                <span class="csharp-var">x</span> % 4.0; <span class="csharp-comment">// 2</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <p class="text">
+            Также есть ряд унарных операций, в которых принимает участие один операнд:
+        </p>
+        <ul>
+            <li class="text"><strong>++</strong>
+                <p class="text">Операция инкремента</p>
+                <p class="text">Инкремент бывает префиксным: ++x - сначала значение переменной x увеличивается на 1, а
+                    потом ее значение возвращается в качестве результата операции.</p>
+                <p class="text">И также существует постфиксный инкремент: x++ - сначала значение переменной x
+                    возвращается в качестве результата операции, а затем к нему прибавляется 1.</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x1</span> =
+                                5;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z1</span> =
+                                ++<span class="csharp-var">x1</span>; <span class="csharp-comment">// z1=6; x1=6</span>
+                            </div>
+                            <div>
+                                <span class="csharp-class">Console</span>.<span
+                                    class="csharp-func">WriteLine</span>(<span class="csharp-text">$"</span>{<span
+                                    class="csharp-var">x1</span>} <span class="csharp-text">-</span> {<span
+                                    class="csharp-var">z1</span>}<span class="csharp-text">"</span>);
+                            </div>
+                            <br>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x2</span> =
+                                5;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z2</span> =
+                                <span class="csharp-var">x2</span>++; <span class="csharp-comment">// z2=5; x2=6</span>
+                            </div>
+                            <div>
+                                <span class="csharp-class">Console</span>.<span
+                                    class="csharp-func">WriteLine</span>(<span class="csharp-text">$"</span>{<span
+                                    class="csharp-var">x2</span>} <span class="csharp-text">-</span> {<span
+                                    class="csharp-var">z2</span>}<span class="csharp-text">"</span>);
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>--</strong>
+                <p class="text">Операция декремента или уменьшения значения на единицу. Также существует префиксная
+                    форма декремента (--x) и постфиксная (x--).</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x1</span> =
+                                5;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z1</span> =
+                                --<span class="csharp-var">x1</span>; <span class="csharp-comment">// z1=4; x1=4</span>
+                            </div>
+                            <div>
+                                <span class="csharp-class">Console</span>.<span
+                                    class="csharp-func">WriteLine</span>(<span class="csharp-text">$"</span>{<span
+                                    class="csharp-var">x1</span>} <span class="csharp-text">-</span> {<span
+                                    class="csharp-var">z1</span>}<span class="csharp-text">"</span>);
+                            </div>
+                            <br>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">x2</span> =
+                                5;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">z2</span> =
+                                <span class="csharp-var">x2</span>--; <span class="csharp-comment">// z2=5; x2=4</span>
+                            </div>
+                            <div>
+                                <span class="csharp-class">Console</span>.<span
+                                    class="csharp-func">WriteLine</span>(<span class="csharp-text">$"</span>{<span
+                                    class="csharp-var">x2</span>} <span class="csharp-text">-</span> {<span
+                                    class="csharp-var">z2</span>}<span class="csharp-text">"</span>);
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <p class="text">При выполнении сразу нескольких арифметических операций следует учитывать порядок их выполнения.
+            Приоритет операций от наивысшего к низшему:</p>
+        <ol>
+            <li class="text">Инкремент, декремент</li>
+            <li class="text">Умножение, деление, получение остатка</li>
+            <li class="text">Сложение, вычитание</li>
+        </ol>
+        <p class="text">Для изменения порядка следования операций применяются скобки.</p>
+        <p class="text">Рассмотрим набор операций:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                        3;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                        5;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">c</span> =
+                        40;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">d</span> =
+                        <span class="csharp-var">c</span>-- - <span class="csharp-var">b</span> * <span
+                            class="csharp-var">a</span>;<span class="csharp-comment"> // a=3; b=5 c=39 d=25</span>
+                    </div>
+                    <div>
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"a=</span>{<span class="csharp-var">a</span>} <span
+                            class="csharp-text">b=</span>{<span class="csharp-var">b</span>}
+                        <span class="csharp-text">c=</span>{<span class="csharp-var">c</span>}
+                        <span class="csharp-text">d=</span>{<span class="csharp-var">d</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Здесь мы имеем дело с тремя операциями: декремент, вычитание и умножение. Сначала выполняется
+            декремент переменной c, затем умножение b*a, и в конце вычитание. То есть фактически набор операций выглядел
+            так:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">d</span> =
+                        (<span class="csharp-var">c</span>--) - (<span class="csharp-var">b</span> * <span
+                            class="csharp-var">a</span>);
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Но с помощью скобок мы могли бы изменить порядок операций, например, следующим образом:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                        3;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                        5;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">c</span> =
+                        40;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">d</span> =
+                        (<span class="csharp-var">c</span> - (--<span class="csharp-var">b</span>)) * <span
+                            class="csharp-var">a</span>;<span class="csharp-comment"> // a=3; b=4 c=40 d=108</span>
+                    </div>
+                    <div>
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"a=</span>{<span class="csharp-var">a</span>} <span
+                            class="csharp-text">b=</span>{<span class="csharp-var">b</span>}
+                        <span class="csharp-text">c=</span>{<span class="csharp-var">c</span>}
+                        <span class="csharp-text">d=</span>{<span class="csharp-var">d</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <h2>Ассоциативность операторов</h2>
+        <p class="text">Как выше было отмечено, операции умножения и деления имеют один и тот же приоритет, но какой
+            тогда результат будет в выражении:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">x</span> =
+                        10 / 5 * 2;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Стоит нам трактовать это выражение как (10 / 5) * 2 или как 10 / (5 * 2)? Ведь в зависимости от
+            трактовки мы получим разные результаты.</p>
+        <p class="text">
+            Когда операции имеют один и тот же приоритет, порядок вычисления определяется ассоциативностью операторов. В
+            зависимости от ассоциативности есть два типа операторов:
+        </p>
+        <ul>
+            <li class="text">Левоассоциативные операторы, которые выполняются слева направо</li>
+            <li class="text">Правоассоциативные операторы, которые выполняются справа налево</li>
+        </ul>
+        <p class="text">Все арифметические операторы (кроме префиксного инкремента и декремента) являются
+            левоассоциативными, то есть выполняются слева направо. Поэтому выражение 10 / 5 * 2 необходимо трактовать
+            как (10 / 5) * 2, то есть результатом будет 4.
+        </p>
+    </main>
+    <footer>
+        <div class="pagination">
+            <a href="data-types.html">Назад</a>
+            <span></span>
+            <a href="dotnet-main.html">Содержание</a>
+            <span></span>
+            <a href="basic-data-type-conversions.html">Вперед</a>
+        </div>
+    </footer>
+</body>
+
+</html>

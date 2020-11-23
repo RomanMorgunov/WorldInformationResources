@@ -1,27 +1,66 @@
 /*.menu*/
-header a:visited {
-  color: white;
-}
-header .menu {
+.menu {
   display: flex;
+  align-items: stretch;
   background: #464547;
 }
-header .menu a {
+.menu a {
   padding: 0.1rem 1rem;
 
+  transition: 0.3s;
   text-decoration: none;
+  color: white;
   font-family: "OpenSansRegular", "arial", "sans-serif";
   font-size: 1.5rem;
 }
-header .menu a.logo {
+.menu a.logo {
   font-family: "Corinthia", "Signika", "Times New Roman", "arial", "sans-serif";
   font-size: 2.5rem;
+}
+.menu a {
+  display: flex;
+  align-items: center;
+}
+.menu a.logo span:first-child {
+  margin-right: 10px;
+}
+.menu a:visited {
   color: white;
 }
-header .menu a.menu-link {
-  line-height: 3.5rem;
-}
-header .menu a.current-page, header .menu a:hover {
+.menu a.current-page,
+.menu a:hover {
   color: #27ccc0;
   background: #373737;
+}
+/*.dropdown*/
+.menu .dropdown {
+  display: flex;
+}
+.menu .dropdown:hover .dropdown-child {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 63px;
+}
+.menu .dropdown-child {
+  display: none;
+  background: #454c56;
+}
+.menu .dropdown-child a {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.2rem;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: white;
+}
+.menu .dropdown-child a:last-child {
+  margin-bottom: 0;
+}
+.menu .dropdown-child a:first-child {
+  margin-top: 0;
+}
+.menu .dropdown-child a:hover {
+  background: teal;
+  color: #f4b300;
 }

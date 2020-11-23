@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav-menu.css">
+    <link rel="stylesheet" href="css/syntax.css" />
+    <link rel="icon" href="images/tab-icon.png">
+    <title>Типы данных</title>
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
+            <div class="dropdown">
+                <a class="current-page" href="dotnet-main.html"><span>C# и .Net Core</span></a>
+                <div class="dropdown-child">
+                    <a href="dotnet-main.html">Язык C# и платформа .NET Core</a>
+                    <a href="program-structure.html">Структура программы</a>
+                    <a href="data-types.html">Типы данных</a>
+                    <a href="arithmetic-operations.html">Арифметические операции</a>
+                    <a href="basic-data-type-conversions.html">Преобразования базовых типов данных</a>
+                    <a href="conditional-expressions.html">Условные выражения</a>
+                    <a href="conditional-constructs.html">Условные конструкции</a>
+                    <a href="test.html">C# Тест</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="content">
+        <h1>Типы данных</h1>
+        <p class="text">
+            Как и во многих языках программирования, в C# есть своя система типов данных, которая используется для
+            создания переменных. Тип данных определяет внутреннее представление данных, множество значений, которые
+            может принимать объект, а также допустимые действия, которые можно применять над объектом.
+        </p>
+        <p class="text">
+            В языке C# есть следующие примитивные типы данных:
+        </p>
+        <ul>
+            <li class="text"><strong>bool</strong>: хранит значение <span class="monospaced-font">true</span> или <span
+                    class="monospaced-font">false</span> (логические литералы). Представлен
+                системным
+                типом <span class="monospaced-font">System.Boolean</span>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">alive</span> =
+                                <span class="csharp-keyword">true</span>;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">isDead</span> =
+                                <span class="csharp-keyword">false</span>;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>byte</strong>: хранит целое число от 0 до 255 и занимает 1 байт. Представлен
+                системным типом <span class="monospaced-font">System.Byte</span>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">byte</span> <span class="csharp-var">bit1</span> =
+                                1;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">byte</span> <span class="csharp-var">bit2</span> =
+                                102;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>sbyte</strong>: хранит целое число от -128 до 127 и занимает 1 байт. Представлен
+                системным типом <span class="monospaced-font">System.SByte</span>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">sbyte</span> <span class="csharp-var">bit1</span> =
+                                -101;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">sbyte</span> <span class="csharp-var">bit2</span> =
+                                102;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>short</strong>: хранит целое число от -32768 до 32767 и занимает 2 байта.
+                Представлен системным типом <span class="monospaced-font">System.Int16</span>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">short</span> <span class="csharp-var">n1</span> =
+                                1;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">short</span> <span class="csharp-var">n2</span> =
+                                102;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>ushort</strong>: хранит целое число от 0 до 65535 и занимает 2 байта. Представлен
+                системным типом <span class="monospaced-font">System.UInt16</span>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">ushort</span> <span class="csharp-var">bit1</span> =
+                                1;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">ushort</span> <span class="csharp-var">bit2</span> =
+                                102;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>int</strong>: хранит целое число от -2147483648 до 2147483647 и занимает 4 байта.
+                Представлен системным типом <span class="monospaced-font">System.Int32</span>. Все целочисленные
+                литералы по умолчанию представляют значения
+                типа int
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                                0b101;
+                                &nbsp;&nbsp;
+                                <span class="csharp-comment">// бинарная форма b = 5</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">c</span> =
+                                0xFF;
+                                &nbsp;&nbsp;
+                                <span class="csharp-comment">// шестнадцатеричная форма c = 255</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>uint</strong>: хранит целое число от 0 до 4294967295 и занимает 4 байта.
+                Представлен системным типом <span class="monospaced-font">System.UInt32</span>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">uint</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">uint</span> <span class="csharp-var">b</span> =
+                                0b101;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">uint</span> <span class="csharp-var">c</span> =
+                                0xFF;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>long</strong>: хранит целое число от –9 223 372 036 854 775 808 до 9 223 372 036
+                854 775 807 и занимает 8 байт. Представлен системным типом <span
+                    class="monospaced-font">System.Int64</span>
+                <table class="code-table">
+
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">long</span> <span class="csharp-var">a</span> =
+                                -10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">long</span> <span class="csharp-var">b</span> =
+                                0b101;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">long</span> <span class="csharp-var">c</span> =
+                                0xFF;
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </li>
+            <li class="text"><strong>ulong</strong>: хранит целое число от 0 до 18 446 744 073 709 551 615 и занимает 8
+                байт. Представлен системным типом <span class="monospaced-font">System.UInt64</span>
+                <table class="code-table">
+
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">ulong</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">ulong</span> <span class="csharp-var">b</span> =
+                                0b101;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">ulong</span> <span class="csharp-var">c</span> =
+                                0xFF;
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </li>
+
+
+            <li class="text"><strong>char</strong>: хранит одиночный символ в кодировке Unicode и занимает 2 байта.
+                Представлен системным типом <span class="monospaced-font">System.Char</span>. Этому типу соответствуют
+                символьные литералы
+                <table class="code-table">
+
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">char</span> <span class="csharp-var">a</span> =
+                                <span class="csharp-text">'A'</span>;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">char</span> <span class="csharp-var">b</span> =
+                                <span class="csharp-text">'\x5A'</span>;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">char</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-text">'\u0420'</span>;
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </li>
+            <li class="text"><strong>string</strong>: хранит набор символов Unicode. Представлен системным типом
+                <span class="monospaced-font">System.String</span>. Этому типу соответствуют символьные литералы
+                <table class="code-table">
+
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">string</span> <span class="csharp-var">hello</span> =
+                                <span class="csharp-text">"Hello"</span>;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">string</span> <span class="csharp-var">world</span> =
+                                <span class="csharp-text">"world"</span>;
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </li>
+            <li class="text"><strong>object</strong>: может хранить значение любого типа данных и занимает 4 байта на
+                32-разрядной платформе и 8 байт на 64-разрядной платформе. Представлен системным типом <span
+                    class="monospaced-font">System.Object</span>,
+                который является базовым для всех других типов и классов .NET.
+                <table class="code-table">
+
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">object</span> <span class="csharp-var">a</span> =
+                                22;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">object</span> <span class="csharp-var">b</span> =
+                                3.14;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">object</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-text">"hello code"</span>;
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </li>
+        </ul>
+        <p class="text">Например, определим несколько переменных разных типов и выведем их значения на консоль:</p>
+        <table class="code-table">
+
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    <div>16</div>
+                    <div>17</div>
+                    <div>18</div>
+                    <div>19</div>
+                    <div>20</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">using</span>
+                        System
+                    </div>
+                    <br>
+                    <div>
+                        <span class="csharp-keyword">namespace</span>
+                        HelloApp
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">class</span>
+                        <span class="csharp-class">Program</span>
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        {
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">static void</span>
+                        <span class="csharp-func">Main</span>(<span class="csharp-keyword">string</span>[]
+                        <span class="csharp-var">args</span>)
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">string</span> <span class="csharp-var">name</span> = <span
+                            class="csharp-text">"Tom"</span>;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">age</span> = 33;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">bool</span> <span class="csharp-var">isEmployed</span> = <span
+                            class="csharp-keyword">false</span>;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-keyword">double</span> <span class="csharp-var">weight</span> = 78.65;
+                    </div>
+                    <br>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Имя: </span>{<span class="csharp-var">name</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Возраст: </span>{<span class="csharp-var">age</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Вес: </span>{<span class="csharp-var">weight</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Работает: </span>{<span class="csharp-var">isEmployed</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        }
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        }
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+
+        </table>
+        <p class="text">Для вывода данных на консоль здесь применяется интерполяция: перед строкой ставится знак $ и
+            после этого мы можем вводить в строку в фигурных скобках значения переменных. Консольный вывод программы:
+        </p>
+        <div class="console">
+            <div>имя: Tom</div>
+            <div>Возраст: 33</div>
+            <div>Вес: 78,65</div>
+            <div>Работает: False</div>
+        </div>
+        <h2>Использование суффиксов</h2>
+        <p class="text">При присвоении значений надо иметь в виду следующую тонкость: все вещественные литералы
+            рассматриваются как значения типа <strong>double</strong>. И чтобы указать, что дробное число представляет
+            тип <strong>float</strong> или тип <strong>decimal</strong>, необходимо к литералу добавлять суффикс:
+            <strong>F/f</strong> -
+            для <strong>float</strong> и <strong>M/m</strong> - для <strong>decimal</strong>.</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">float</span> <span class="csharp-var">a</span> =
+                        3.14F;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">float</span> <span class="csharp-var">b</span> =
+                        30.6f;
+                    </div>
+                    <br>
+                    <div>
+                        <span class="csharp-keyword">decimal</span> <span class="csharp-var">c</span> =
+                        1005.8M;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">decimal</span> <span class="csharp-var">d</span> =
+                        334.8m;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Подобным образом все целочисленные литералы рассматриваются как значения типа
+            <strong>int</strong>. Чтобы явным образом указать, что целочисленный литерал представляет значение типа
+            <strong>uint</strong>, надо использовать суффикс <strong>U/u</strong>, для типа <strong>long</strong> -
+            суффикс <strong>L/l</strong>, а для типа <strong>ulong</strong> - суффикс <strong>UL/ul</strong>:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">uint</span> <span class="csharp-var">a</span> =
+                        10U;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">float</span> <span class="csharp-var">b</span> =
+                        20L;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">decimal</span> <span class="csharp-var">c</span> =
+                        30UL;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <h2>Использование системных типов</h2>
+        <p class="text">Выше при перечислении всех базовых типов данных для каждого упоминался системный тип. Потому что
+            название встроенного типа по сути представляет собой сокращенное обозначение системного типа. Например,
+            следующие переменные будут эквивалентны по типу:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                        4;
+                    </div>
+                    <div>
+                        System.<span class="csharp-class">Int32</span> <span class="csharp-var">b</span> =
+                        4;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <h2>Неявная типизация</h2>
+        <p class="text">Ранее мы явным образом указывали тип переменных, например, <span class="monospaced-font">int
+                x;</span>. И компилятор при запуске уже знал, что x хранит целочисленное значение.</p>
+        <p class="text">Однако мы можем использовать и модель неявной типизации:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">var</span> <span class="csharp-var">hello</span> =
+                        <span class="csharp-text">"Hell to World"</span>;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">var</span> <span class="csharp-var">c</span> =
+                        20;
+                    </div>
+                    <br>
+                    <div>
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-var">c</span>.<span class="csharp-func">GetType</span>().<span
+                            class="csharp-func">ToString</span>());
+                    </div>
+                    <div>
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-var">hello</span>.<span class="csharp-func">GetType</span>().<span
+                            class="csharp-func">ToString</span>());
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Для неявной типизации вместо названия типа данных используется ключевое слово <span
+                class="monospaced-font">var</span>. Затем уже при компиляции компилятор сам выводит тип данных исходя из
+            присвоенного значения. В примере выше использовалось выражение <span
+                class="monospaced-font">Console.WriteLine(c.GetType().ToString());</span>, которое позволяет нам узнать
+            выведенный тип переменной <span class="monospaced-font">с</span>. Так как по умолчанию все целочисленные
+            значения рассматриваются как значения типа <span class="monospaced-font">int</span>, то поэтому в итоге
+            переменная c будет иметь тип <span class="monospaced-font">int</span> или <span
+                class="monospaced-font">System.Int32</span></p>
+        <p class="text">
+            Эти переменные подобны обычным, однако они имеют некоторые ограничения.
+        </p>
+        <p class="text">
+            Во-первых, мы не можем сначала объявить неявно типизируемую переменную, а затем инициализировать:
+        </p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-comment">// этот код работает</span>
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">a</span>;
+                    </div>
+                    <div>
+                        <span class="csharp-var">a</span> = 20;
+                    </div>
+                    <br>
+                    <div>
+                        <span class="csharp-comment">// этот код не работает</span>
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">var</span> <span class="csharp-var">c</span>;
+                    </div>
+                    <div>
+                        <span class="csharp-var">c</span> = 20;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">
+            Во-вторых, мы не можем указать в качестве значения неявно типизируемой переменной null:
+        </p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-comment">// этот код работает</span>
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">var</span> <span class="csharp-var">c</span> = <span
+                            class="csharp-keyword">null</span>;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">
+            Так как значение null, то компилятор не сможет вывести тип данных.
+        </p>
+        <h2>double или decimal</h2>
+        <p class="text">Из выше перечисленного списка типов данных очевидно, что если мы хотим использовать в программе
+            числа до 256, то для их хранения мы можем использоват переменные типа byte. При использовании больших
+            значений мы можем взять тип short, int, long. То же самое для дробных чисел - для обычных дробных чисел
+            можно взять тип float, для очень больших дробных чисел - тип double. Тип decimal здесь стоит особняком в том
+            плане, что несмотря на большую разрядность по сравнению с типом double, тип double может хранить большее
+            значение. Однако значение decimal может содержать до 28 знаков после запятой, тогда как значение типа double
+            - 15-16 знаков после запятой.</p>
+        <p class="text">Decimal чаще находит применение в финансовых вычислениях, тогда как double - в математических
+            операциях. Общие различия между этими двумя типами можно выразить следующей таблицей:</p>
+        <table class="comparison-table">
+            <tr>
+                <th></th>
+                <th>Decimal</th>
+                <th>Double</th>
+            </tr>
+            <tr>
+                <td>Наибольшее значение</td>
+                <td>~10<sup>28</sup></td>
+                <td>~10<sup>308</sup></td>
+            </tr>
+            <tr>
+                <td>Наименьшее значение (без учета нуля)</td>
+                <td>10<sup>-28</sup></td>
+                <td>~10<sup>-323</sup></td>
+            </tr>
+            <tr>
+                <td>Знаков после запятой</td>
+                <td>28</td>
+                <td>15-16</td>
+            </tr>
+            <tr>
+                <td>Разрядность</td>
+                <td>16 байт</td>
+                <td>8 байт</td>
+            </tr>
+            <tr>
+                <td>Операций в секунду</td>
+                <td>сотни миллионов</td>
+                <td>миллиарды</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <div class="pagination">
+            <a href="program-structure.html">Назад</a>
+            <span></span>
+            <a href="dotnet-main.html">Содержание</a>
+            <span></span>
+            <a href="arithmetic-operations.html">Вперед</a>
+        </div>
+    </footer>
+</body>
+
+</html>

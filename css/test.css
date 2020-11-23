@@ -1,0 +1,60 @@
+.content {
+  padding: 0;
+  width: 800px;
+  margin: 3rem auto 1rem auto;
+  /* border: 1px solid; */
+}
+@media screen and (max-width: 845px) {
+  .content {
+    width: 95%;
+  }
+}
+h1 {
+  margin-bottom: 1.5rem;
+
+  font-size: 2rem;
+}
+h2,
+.answers a {
+  padding: 1rem 2rem;
+
+  background: white;
+}
+.question-info {
+  color: #83ba1f;
+  font-size: 0.9rem;
+}
+.question {
+  font-size: 1.5rem;
+}
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+.answers a {
+  border: 2px solid white;
+  text-decoration: none;
+  color: black;
+}
+.answers a:hover {
+  text-decoration: underline;
+  transition: 0.5s;
+  color: #74531f;
+  border: 2px solid #6c43af;
+}
+.answers hr {
+  margin: 0;
+}
+.your-result-caption,
+.your-result-text {
+  text-align: center;
+}
+.your-result-caption {
+  font-size: 2rem;
+}
+.your-result-text {
+  font-size: 1.5rem;
+}
+#your-result {
+  display: none;
+}

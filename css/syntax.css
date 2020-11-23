@@ -1,0 +1,58 @@
+.csharp-keyword {
+  color: #0000ff;
+}
+.csharp-class {
+  color: #066555;
+}
+.csharp-func {
+  color: #74531f;
+}
+.csharp-var {
+  color: #1f377f;
+}
+.csharp-text {
+  color: #a31515;
+}
+.csharp-comment {
+  color: #066555;
+}
+.csharp-condition {
+  color: #8f08c4;
+}
+.code-table {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  border: 1px solid silver;
+  background: #f7f7fa;
+}
+.numbering {
+  width: 32px;
+  padding: 0 6.5px 0 13px;
+
+  border-right: 3px solid #6ce26c;
+  color: #066555;
+}
+.code {
+  padding: 0 6.5px;
+}
+ul li .code-table {
+  margin-top: 0.5rem;
+}
+.code-table,
+.console,
+.monospaced-font {
+  font-family: Consolas, "Courier New", monospace;
+}
+.code-table,
+.console {
+  font-size: 0.9rem;
+}
+.console {
+  padding-left: 0.5rem;
+  width: 50%;
+  min-width: 300px;
+
+  background: black;
+  color: white;
+}

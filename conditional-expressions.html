@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav-menu.css">
+    <link rel="stylesheet" href="css/syntax.css" />
+    <link rel="icon" href="images/tab-icon.png">
+    <title>Условные выражения</title>
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
+            <div class="dropdown">
+                <a class="current-page" href="dotnet-main.html"><span>C# и .Net Core</span></a>
+                <div class="dropdown-child">
+                    <a href="dotnet-main.html">Язык C# и платформа .NET Core</a>
+                    <a href="program-structure.html">Структура программы</a>
+                    <a href="data-types.html">Типы данных</a>
+                    <a href="arithmetic-operations.html">Арифметические операции</a>
+                    <a href="basic-data-type-conversions.html">Преобразования базовых типов данных</a>
+                    <a href="conditional-expressions.html">Условные выражения</a>
+                    <a href="conditional-constructs.html">Условные конструкции</a>
+                    <a href="test.html">C# Тест</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="content">
+        <h1>Условные выражения</h1>
+        <p class="text">
+            Отдельный набор операций представляет условные выражения. Такие операции возвращают логическое значение, то
+            есть значение типа bool: true, если выражение истинно, и false, если выражение ложно. К подобным операциям
+            относятся операции сравнения и логические операции.
+        </p>
+        <h2>Операции сравнения</h2>
+        <p class="text">В операциях сравнения сравниваются два операнда и возвращается значение типа bool - true, если
+            выражение верно, и false, если выражение неверно.</p>
+        <ul>
+            <li class="text"><strong>==</strong>
+                <p class="text">Сравнивает два операнда на равенство. Если они равны, то операция возвращает
+                    <strong>true</strong>, если не равны, то возвращается <strong>false</strong>:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                                4;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-var">a</span> == <span class="csharp-var">b</span>; <span
+                                    class="csharp-comment">// false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>!=</strong>
+                <p class="text">Сравнивает два операнда и возвращает <strong>true</strong>, если операнды не равны, и
+                    <strong>false</strong>, если они равны.</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                                4;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-var">a</span> != <span class="csharp-var">b</span>; <span
+                                    class="csharp-comment">// true</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">d</span> =
+                                <span class="csharp-var">a</span> != 10; <span class="csharp-comment">// false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>&lt;</strong>
+                <p class="text">Операция "меньше чем". Возвращает <strong>true</strong>, если первый операнд меньше
+                    второго, и <strong>false</strong>, если первый операнд больше второго:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                                4;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-var">a</span> &lt; <span class="csharp-var">b</span>; <span
+                                    class="csharp-comment">// false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>&gt;</strong>
+                <p class="text">Операция "больше чем". Сравнивает два операнда и возвращает <strong>true</strong>, если
+                    первый операнд больше второго, иначе возвращает <strong>false</strong>:
+                </p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                                4;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-var">a</span> &gt; <span class="csharp-var">b</span>; <span
+                                    class="csharp-comment">// true</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">d</span> =
+                                <span class="csharp-var">a</span> &gt; 25; <span class="csharp-comment">// false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>&lt;=</strong>
+                <p class="text">Операция "меньше или равно". Сравнивает два операнда и возвращает <strong>true</strong>,
+                    если первый операнд меньше или равен второму. Иначе возвращает <strong>false</strong>.</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                                4;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-var">a</span> &lt;= <span class="csharp-var">b</span>; <span
+                                    class="csharp-comment">// false</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">d</span> =
+                                <span class="csharp-var">a</span> &lt;= 25; <span class="csharp-comment">// true</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>&gt;=</strong>
+                <p class="text">Операция "больше или равно". Сравнивает два операнда и возвращает <strong>true</strong>,
+                    если первый операнд больше или равен второму, иначе возвращается <strong>false</strong>:
+                </p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">a</span> =
+                                10;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">int</span> <span class="csharp-var">b</span> =
+                                4;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">c</span> =
+                                <span class="csharp-var">a</span> &gt;= <span class="csharp-var">b</span>; <span
+                                    class="csharp-comment">// true</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">d</span> =
+                                <span class="csharp-var">a</span> &gt;= 25; <span class="csharp-comment">// false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <p class="text">Операции &lt;, &gt; &lt;=, &gt;= имеют больший приоритет, чем == и !=.</p>
+        <h2>Логические операции</h2>
+        <p class="text">Также в C# определены логические операторы, которые также возвращают значение типа
+            <strong>bool</strong>. В качестве операндов они принимают значения типа <strong>bool</strong>. Как правило,
+            применяются к отношениям и объединяют несколько операций сравнения.</p>
+        <ul>
+            <li class="text"><strong>|</strong>
+                <p class="text">Операция логического сложения или логическое ИЛИ. Возвращает <strong>true</strong>, если
+                    хотя бы один из операндов возвращает <strong>true</strong>.
+                </p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x1</span> =
+                                (5 &gt; 6) | (4 &lt; 6); <span class="csharp-comment">// 5 &gt; 6 - false, 4 &lt; 6 -
+                                    true, поэтому возвращается true</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x2</span> =
+                                (5 &gt; 6) | (4 &gt; 6); <span class="csharp-comment">// 5 &gt; 6 - false, 4 &gt; 6 -
+                                    false, поэтому возвращается false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>&</strong>
+                <p class="text">Операция логического умножения или логическое И. Возвращает <strong>true</strong>, если
+                    оба операнда одновременно равны <strong>true</strong>.
+                </p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x1</span> =
+                                (5 &gt; 6) &amp; (4 &lt; 6); <span class="csharp-comment">// 5 &gt; 6 - false, 4 &lt; 6 -
+                                    true, поэтому возвращается false</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x2</span> =
+                                (5 &lt; 6) &amp; (4 &lt; 6); <span class="csharp-comment">// 5 &lt; 6 - true, 4 &lt; 6 -
+                                    true, поэтому возвращается true</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>||</strong>
+                <p class="text">Операция логического сложения. Возвращает <strong>true</strong>, если хотя бы один из
+                    операндов возвращает <strong>true</strong>.
+                </p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x1</span> =
+                                (5 &gt; 6) || (4 &lt; 6); <span class="csharp-comment">// 5 &gt; 6 - false, 4 &lt; 6 -
+                                    true, поэтому возвращается true</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x2</span> =
+                                (5 &gt; 6) || (4 &gt; 6); <span class="csharp-comment">// 5 &gt; 6 - false, 4 &gt; 6 -
+                                    false, поэтому возвращается false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>&amp;&amp;</strong>
+                <p class="text">Операция логического умножения. Возвращает <strong>true</strong>, если оба операнда
+                    одновременно равны <strong>true</strong>.
+                </p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x1</span> =
+                                (5 &gt; 6) &amp;&amp; (4 &lt; 6); <span class="csharp-comment">// 5 &gt; 6 - false, 4 &lt; 6 -
+                                    true, поэтому возвращается false</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x2</span> =
+                                (5 &lt; 6) &amp;&amp; (4 &lt; 6); <span class="csharp-comment">// 5 &lt; 6 - true, 4 &lt; 6 -
+                                    true, поэтому возвращается true</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>!</strong>
+                <p class="text">Операция логического отрицания. Производится над одним операндом и возвращает
+                    <strong>true</strong>, если операнд равен <strong>false</strong>. Если операнд равен
+                    <strong>true</strong>, то операция возвращает <strong>false</strong>:</p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">a</span> =
+                                <span class="csharp-keyword">true</span>;
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">b</span> =
+                                ! <span class="csharp-var">a</span> <span class="csharp-comment">false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="text"><strong>^</strong>
+                <p class="text">Операция исключающего ИЛИ. Возвращает <strong>true</strong>, если либо первый, либо
+                    второй операнд (но не одновременно) равны <strong>true</strong>, иначе возвращает
+                    <strong>false</strong>
+                </p>
+                <table class="code-table">
+                    <tr>
+                        <td class="numbering">
+                            <div>1</div>
+                            <div>2</div>
+                        </td>
+                        <td class="code">
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x5</span> =
+                                (5 &gt; 6) ^ (4 &lt; 6); <span class="csharp-comment">// 5 &gt; 6 - false, 4 &lt; 6 -
+                                    true, поэтому возвращается true</span>
+                            </div>
+                            <div>
+                                <span class="csharp-keyword">bool</span> <span class="csharp-var">x6</span> =
+                                (50 &gt; 6) ^ (4 / 2 &lt; 3); <span class="csharp-comment">// 50 &gt; 6 - true, 4/2 &lt;
+                                    3 -
+                                    true, поэтому возвращается false</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <p class="text">Здесь у нас две пары операций | и || (а также &amp; и &amp;&amp;) выполняют похожие действия, однако же они
+            не равнозначны.</p>
+        <p class="text">В выражении z=x|y; будут вычисляться оба значения - x и y.</p>
+        <p class="text">В выражении же z=x||y; сначала будет вычисляться значение x, и если оно равно true, то
+            вычисление значения y уже смысла не имеет, так как у нас в любом случае уже z будет равно true. Значение y
+            будет вычисляться только в том случае, если x равно false</p>
+        <p class="text">То же самое касается пары операций &amp;/&amp;&amp;. В выражении z=x&amp;y; будут вычисляться оба значения - x и
+            y.</p>
+        <p class="text">В выражении же z=x&amp;&amp;y; сначала будет вычисляться значение x, и если оно равно false, то
+            вычисление значения y уже смысла не имеет, так как у нас в любом случае уже z будет равно false. Значение y
+            будет вычисляться только в том случае, если x равно true</p>
+        <p class="text">Поэтому операции || и &amp;&amp; более удобны в вычислениях, так как позволяют сократить время на
+            вычисление значения выражения, и тем самым повышают производительность. А операции | и &amp; больше подходят для
+            выполнения поразрядных операций над числами.</p>
+    </main>
+    <footer>
+        <div class="pagination">
+            <a href="basic-data-type-conversions.html">Назад</a>
+            <span></span>
+            <a href="dotnet-main.html">Содержание</a>
+            <span></span>
+            <a href="conditional-constructs.html">Вперед</a>
+        </div>
+    </footer>
+</body>
+
+</html>

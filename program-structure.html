@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav-menu.css">
+  <link rel="stylesheet" href="css/syntax.css" />
+  <link rel="icon" href="images/tab-icon.png">
+  <title>Структура программы</title>
+</head>
+
+<body>
+  <header>
+    <nav class="menu">
+      <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
+      <div class="dropdown">
+        <a class="current-page" href="dotnet-main.html"><span>C# и .Net Core</span></a>
+        <div class="dropdown-child">
+          <a href="dotnet-main.html">Язык C# и платформа .NET Core</a>
+          <a href="program-structure.html">Структура программы</a>
+          <a href="data-types.html">Типы данных</a>
+          <a href="arithmetic-operations.html">Арифметические операции</a>
+          <a href="basic-data-type-conversions.html">Преобразования базовых типов данных</a>
+          <a href="conditional-expressions.html">Условные выражения</a>
+          <a href="conditional-constructs.html">Условные конструкции</a>
+          <a href="test.html">C# Тест</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="content">
+    <h1>Структура программы</h1>
+    <h2>Инструкции</h2>
+    <p class="text">
+      Базовым строительным блоком программы являются инструкции (statement). Инструкция представляет некоторое действие,
+      например, арифметическую операцию, вызов метода, объявление переменной и присвоение ей значения. В конце каждой
+      инструкции в C# ставится точка с запятой (;). Данный знак указывает компилятору на конец инструкции. Например:
+    </p>
+    <table class="code-table">
+      <tr>
+        <td class="numbering">
+          <div>1</div>
+        </td>
+        <td class="code">
+          <div>
+            <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+              class="csharp-text">"Привет"</span>);
+          </div>
+        </td>
+      </tr>
+    </table>
+    <p class="text">
+      Данная строка представляет вызов метода Console.WriteLine, который выводит на консоль строку. В данном случае
+      вызов метода является инструкцией и поэтому завершается точкой с запятой.
+    </p>
+    <p class="text">
+      Набор инструкций может объединяться в блок кода. Блок кода заключается в фигурные скобки, а инструкции помещаются
+      между открывающей и закрывающей фигурными скобками:
+    </p>
+    <table class="code-table">
+      <tr>
+        <td class="numbering">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </td>
+        <td class="code">
+          <div>{</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+              class="csharp-text">"Привет"</span>);
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+              class="csharp-text">"Добро пожаловать в C#"</span>);
+          </div>
+          <div>}</div>
+        </td>
+      </tr>
+    </table>
+    <p class="text">
+      В данном блоке кода две инструкции, которые выводят на консоль определенную строку.
+    </p>
+    <p class="text">
+      Одни блоки кода могут содержать другие блоки:
+    </p>
+    <table class="code-table">
+      <tr>
+        <td class="numbering">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </td>
+        <td class="code">
+          <div>{</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+              class="csharp-text">"Первый блок"</span>);
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            {
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+              class="csharp-text">"Второй блок"</span>);
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            }
+          </div>
+          <div>}</div>
+        </td>
+      </tr>
+    </table>
+    <h2>Метод Main</h2>
+    <p class="text">
+      Точкой входа в программу на языке C# является метод Main. При создании проекта консольного приложения в Visual
+      Studio, например, создается следующий метод Main:
+    </p>
+    <table class="code-table">
+      <tr>
+        <td class="numbering">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+        </td>
+        <td class="code">
+          <div>
+            <span class="csharp-keyword">class</span>
+            <span class="csharp-class">Program</span>
+          </div>
+          <div>{</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-keyword">static void</span>
+            <span class="csharp-func">Main</span>(<span class="csharp-keyword">string</span>[]
+            <span class="csharp-var">args</span>)
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            {
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">// здесь помещаются выполняемые инструкции</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            }
+          </div>
+          <div>}</div>
+        </td>
+      </tr>
+    </table>
+    <p class="text">
+      По умолчанию метод Main размещается в классе Program. Название класса может быть любым. Но метод Main является
+      обязательной частью консольного приложения. Если мы изменим его название, то программа не скомпилируется.
+    </p>
+    <p class="text">
+      По сути и класс, и метод представляют своего рода блок кода: блок метода помещается в блок класса. Внутри блока
+      метода Main располагаются выполняемые в программе инструкции.
+    </p>
+    <h2>Регистрозависимость</h2>
+    <p class="text">
+      C# является регистрозависимым языком. Это значит, в зависимости от регистра символов какое-то определенные
+      названия может представлять разные классы, методы, переменные и т.д. Например, название обязательного метода Main
+      начинается именно с большой буквы: "Main". Если мы назовем метод "main", то программа не скомпилируется, так как
+      метод, который представляет стартовую точку в приложении, обязательно должен называться "Main", а не "main" или
+      "MAIN".
+    </p>
+    <h2>Комментарии</h2>
+    <p class="text">
+      Важной частью программного кода являются комментарии. Они не являются собственно частью программы, при компиляции
+      они игнорируются. Тем не менее комментарии делают код программы более понятным, помогая понять те или иные его
+      части.
+    </p>
+    <p class="text">
+      есть два типа комментариев: однострочный и многострочный. Однострочный комментарий размещается на одной строке
+      после двойного слеша //. А многострочный комментарий заключается между символами /* текст комментария */. Он может
+      размещаться на нескольких строках. Например:
+    </p>
+    <table class="code-table">
+      <tr>
+        <td class="numbering">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>18</div>
+          <div>19</div>
+        </td>
+        <td class="code">
+          <div>
+            <span class="csharp-keyword">using</span>
+            System
+          </div>
+          <br>
+          <div>
+            <span class="csharp-keyword">namespace</span>
+            HelloApp
+          </div>
+          <div>{</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">/*</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">программа, которая спрашивает у пользователя имя</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">и выводит его в консоль</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">*/</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-keyword">class</span>
+            <span class="csharp-class">Program</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            {
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">// метод Main - стартовая точка приложения</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-keyword">static void</span>
+            <span class="csharp-func">Main</span>(<span class="csharp-keyword">string</span>[]
+            <span class="csharp-var">args</span>)
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-class">Console</span>.<span class="csharp-func">Write</span>(<span
+              class="csharp-text">"Введите свое имя: "</span>);
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-keyword">string</span>
+            <span class="csharp-var">name</span> =
+            <span class="csharp-class">Console</span>.<span class="csharp-func">ReadLine</span>();
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">// вводим имя</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+              class="csharp-text">"Привет {0}"</span>, <span class="csharp-var">name</span>);
+            &nbsp;&nbsp;
+            <span class="csharp-comment">// выводим имя на консоль </span>
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            }
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            }
+          </div>
+          <div>}</div>
+        </td>
+      </tr>
+    </table>
+  </main>
+  <footer>
+    <div class="pagination">
+      <a href="dotnet-main.html">Назад</a>
+      <span></span>
+      <a href="dotnet-main.html">Содержание</a>
+      <span></span>
+      <a href="data-types.html">Вперед</a>
+    </div>
+  </footer>
+</body>
+
+</html>

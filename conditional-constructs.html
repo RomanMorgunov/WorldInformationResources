@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav-menu.css">
+    <link rel="stylesheet" href="css/syntax.css" />
+    <link rel="icon" href="images/tab-icon.png">
+    <title>Условные конструкции</title>
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
+            <div class="dropdown">
+                <a class="current-page" href="dotnet-main.html"><span>C# и .Net Core</span></a>
+                <div class="dropdown-child">
+                    <a href="dotnet-main.html">Язык C# и платформа .NET Core</a>
+                    <a href="program-structure.html">Структура программы</a>
+                    <a href="data-types.html">Типы данных</a>
+                    <a href="arithmetic-operations.html">Арифметические операции</a>
+                    <a href="basic-data-type-conversions.html">Преобразования базовых типов данных</a>
+                    <a href="conditional-expressions.html">Условные выражения</a>
+                    <a href="conditional-constructs.html">Условные конструкции</a>
+                    <a href="test.html">C# Тест</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="content">
+        <h1>Условные конструкции</h1>
+        <p class="text">
+            Условные конструкции - один из базовых компонентов многих языков программирования, которые направляют работу
+            программы по одному из путей в зависимости от определенных условий.
+        </p>
+        <p class="text">В языке C# используются следующие условные конструкции: if..else и switch..case</p>
+        <h2>Конструкция if/else</h2>
+        <p class="text">Конструкция if/else проверяет истинность некоторого условия и в зависимости от результатов
+            проверки выполняет определенный код:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num1</span> = 8;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num2</span> = 6;
+                    </div>
+                    <div>
+                        <span class="csharp-condition">if</span> (<span class="csharp-var">num1</span> &gt; <span
+                            class="csharp-var">num2</span>)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Число </span>{<span class="csharp-var">num1</span>}<span
+                            class="csharp-text"> больше числа </span>{<span class="csharp-var">num2</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">После ключевого слова if ставится условие. И если это условие выполняется, то срабатывает код,
+            который помещен далее в блоке if после фигурных скобок. В качестве условий выступают ранее рассмотренные
+            операции сравнения.</p>
+        <p class="text">В данном случае у нас первое число больше второго, поэтому выражение num1 > num2 истинно и
+            возвращает true, следовательно, управление переходит к строке Console.WriteLine("Число {num1} больше числа
+            {num2}");</p>
+        <p class="text">
+            Но что, если мы захотим, чтобы при несоблюдении условия также выполнялись какие-либо действия? В этом случае
+            мы можем добавить блок else:
+        </p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num1</span> = 8;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num2</span> = 6;
+                    </div>
+                    <div>
+                        <span class="csharp-condition">if</span> (<span class="csharp-var">num1</span> &gt; <span
+                            class="csharp-var">num2</span>)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Число </span>{<span class="csharp-var">num1</span>}<span
+                            class="csharp-text"> больше числа </span>{<span class="csharp-var">num2</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>}</div>
+                    <div>
+                        <span class="csharp-condition">else</span>
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Число </span>{<span class="csharp-var">num1</span>}<span
+                            class="csharp-text"> меньше числа </span>{<span class="csharp-var">num2</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Но при сравнении чисел мы можем насчитать три состояния: первое число больше второго, первое
+            число меньше второго и числа равны. Используя конструкцию else if, мы можем обрабатывать дополнительные
+            условия:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num1</span> = 8;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num2</span> = 6;
+                    </div>
+                    <div>
+                        <span class="csharp-condition">if</span> (<span class="csharp-var">num1</span> &gt; <span
+                            class="csharp-var">num2</span>)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Число </span>{<span class="csharp-var">num1</span>}<span
+                            class="csharp-text"> больше числа </span>{<span class="csharp-var">num2</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>}</div>
+                    <div>
+                        <span class="csharp-condition">else if</span> (<span class="csharp-var">num1</span> &lt; <span
+                            class="csharp-var">num2</span>)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Число </span>{<span class="csharp-var">num1</span>}<span
+                            class="csharp-text"> меньше числа </span>{<span class="csharp-var">num2</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>}</div>
+                    <div>
+                        <span class="csharp-condition">else</span>
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Число </span>{<span class="csharp-var">num1</span>}<span
+                            class="csharp-text"> равно числу </span>{<span class="csharp-var">num2</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Также мы можем соединить сразу несколько условий, используя логические операторы:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num1</span> = 8;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">num2</span> = 6;
+                    </div>
+                    <div>
+                        <span class="csharp-condition">if</span> (<span class="csharp-var">num1</span> &gt; <span
+                            class="csharp-var">num2</span> && <span class="csharp-var">num1</span> == 8)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">$"Число </span>{<span class="csharp-var">num1</span>}<span
+                            class="csharp-text"> больше числа </span>{<span class="csharp-var">num2</span>}<span
+                            class="csharp-text">"</span>);
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">В данном случае блок if будет выполняться, если num1 > num2 равно true и num1==8 равно true.</p>
+        <h2>Конструкция switch</h2>
+        <p class="text">Конструкция <strong>switch/case</strong> аналогична конструкции <strong>if/else</strong>, так
+            как позволяет обработать сразу несколько условий:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"Нажмите Y или N"</span>);
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">string</span> <span class="csharp-var">selection</span> = <span
+                            class="csharp-class">Console</span> <span class="csharp-func">ReadLine</span>();
+                    </div>
+                    <div>
+                        <span class="csharp-condition">switch</span> (<span class="csharp-var">selection</span>)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">case</span> <span class="csharp-text">"Y"</span>:
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"Вы нажали букву Y"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">break</span>;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">case</span> <span class="csharp-text">"N"</span>:
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"Вы нажали букву N"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">break</span>;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">default</span>:
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"Вы нажали неизвестную букву"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">break</span>;
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">После ключевого слова <strong>switch</strong> в скобках идет сравниваемое выражение. Значение
+            этого выражения последовательно сравнивается со значениями, помещенными после оператора
+            <strong>сase</strong>. И если совпадение будет найдено, то будет выполняться определенный блок
+            <strong>сase</strong>.</p>
+        <p class="text">В конце каждого блока сase должен ставиться один из операторов перехода: <strong>break</strong>,
+            <strong>goto case</strong>, <strong>return</strong> или <strong>throw</strong>. Как правило, используется
+            оператор <strong>break</strong>. При его применении другие блоки case выполняться не будут.</p>
+        <p class="text">Однако если мы хотим, чтобы, наоборот, после выполнения текущего блока case выполнялся другой
+            блок case, то мы можем использовать вместо break оператор goto case:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    <div>16</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">number</span> = 1;
+                    </div>
+                    <div>
+                        <span class="csharp-condition">switch</span> (<span class="csharp-var">number</span>)
+                    </div>
+                    <div>{</div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">case</span> 1:
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"case 1"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">goto case</span> 5; <span class="csharp-comment">// переход к
+                            case 5</span>
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">case</span> 3:
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"case 3"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">break</span>;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">case</span> 5:
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"case 5"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">break</span>;
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">default</span>:
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"default"</span>);
+                    </div>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="csharp-condition">break</span>;
+                    </div>
+                    <div>}</div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Если мы хотим также обработать ситуацию, когда совпадения не будет найдено, то можно добавить
+            блок <strong>default</strong>, как в примере выше.</p>
+        <p class="text">Применение оператора return позволит выйти не только из блока case, но и из вызывающего метода.
+            То есть, если в методе Main после конструкции switch..case, в которой используется оператор return, идут
+            какие-либо операторы и выражения, то они выполняться не будут, а метод Main завершит работу.</p>
+        <h2>Тернарная операция</h2>
+        <p class="text">Тернарную операция имеет следующий синтаксис: [первый операнд - условие] ? [второй операнд] :
+            [третий операнд]. Здесь сразу три операнда. В зависимости от условия тернарная операция возвращает второй
+            или третий операнд: если условие равно true, то возвращается второй операнд; если условие равно false, то
+            третий. Например:</p>
+        <table class="code-table">
+            <tr>
+                <td class="numbering">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                </td>
+                <td class="code">
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">x</span> = 3;
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">y</span> = 2;
+                    </div>
+                    <div>
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(<span
+                            class="csharp-text">"Нажмите + или -"</span>);
+                    </div>
+                    <div>
+                        <span class="csharp-keyword">string</span> <span class="csharp-var">selection</span> = <span
+                            class="csharp-class">Console</span> <span class="csharp-func">ReadLine</span>();
+                    </div>
+                    <br>
+                    <div>
+                        <span class="csharp-keyword">int</span> <span class="csharp-var">z</span> = <span
+                            class="csharp-var">selection</span> == <span class="csharp-text">"+"</span> ? (<span
+                            class="csharp-var">x</span> + <span class="csharp-var">y</span> : <span
+                            class="csharp-var">x</span> - <span class="csharp-var">y</span>);
+                    </div>
+                    <div>
+                        <span class="csharp-class">Console</span> <span class="csharp-func">WriteLine</span>(z);
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p class="text">Здесь результатом тернарной операции является переменная z. Если мы выше вводим "+", то z будет
+            равно второму операнду - (x+y). Иначе z будет равно третьему операнду.</p>
+    </main>
+    <footer>
+        <div class="pagination">
+            <a href="conditional-expressions.html">Назад</a>
+            <span></span>
+            <a href="dotnet-main.html">Содержание</a>
+            <span></span>
+            <a href="test.html">Вперед</a>
+        </div>
+    </footer>
+</body>
+
+</html>
