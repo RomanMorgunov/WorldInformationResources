@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Signika";
+  src: url("../fonts/Signika.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Caveat";
+  src: url("../fonts/Caveat-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
 body {
   font-family: "Roboto", "arial", "sans-serif";
   background: #eaedf1;

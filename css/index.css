@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Corinthia";
+  src: url("../fonts/Corinthia.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Caveat";
+  src: url("../fonts/Caveat-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
 .name {
   font-family: "Corinthia", "Signika", "Times New Roman", "arial", "sans-serif";
   font-size: 2rem;

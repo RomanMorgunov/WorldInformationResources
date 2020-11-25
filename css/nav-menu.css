@@ -1,10 +1,19 @@
+@font-face {
+  font-family: "Corinthia";
+  src: url("../fonts/Corinthia.ttf") format("truetype");
+}
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
 /*.menu*/
 .menu {
   display: flex;
   align-items: stretch;
   background: #464547;
 }
-.menu a {
+.menu a,
+.manual-caption {
   padding: 0.1rem 1rem;
 
   transition: 0.3s;
@@ -17,18 +26,17 @@
   font-family: "Corinthia", "Signika", "Times New Roman", "arial", "sans-serif";
   font-size: 2.5rem;
 }
-.menu a {
+.menu a,
+.manual-caption {
   display: flex;
   align-items: center;
 }
 .menu a.logo span:first-child {
   margin-right: 10px;
 }
-.menu a:visited {
-  color: white;
-}
-.menu a.current-page,
-.menu a:hover {
+.menu .current-page,
+.menu a:hover,
+.menu .manual-caption:hover {
   color: #27ccc0;
   background: #373737;
 }

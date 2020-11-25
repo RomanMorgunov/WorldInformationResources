@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Consolas";
+  src: url("../fonts/Consolas.ttf") format("truetype");
+}
 .csharp-keyword {
   color: #0000ff;
 }
@@ -18,6 +22,14 @@
 }
 .csharp-condition {
   color: #8f08c4;
+}
+.console {
+  padding-left: 0.5rem;
+  width: 50%;
+  min-width: 300px;
+
+  background: black;
+  color: white;
 }
 .code-table {
   width: 100%;
@@ -48,11 +60,8 @@ ul li .code-table {
 .console {
   font-size: 0.9rem;
 }
-.console {
-  padding-left: 0.5rem;
-  width: 50%;
-  min-width: 300px;
-
-  background: black;
-  color: white;
+@media screen and (max-width: 600px) {
+  .numbering {
+    display: none;
+  }
 }
