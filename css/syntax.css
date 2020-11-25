@@ -56,12 +56,12 @@ ul li .code-table {
 .monospaced-font {
   font-family: Consolas, "Courier New", monospace;
 }
-.code-table,
-.console {
-  font-size: 0.9rem;
-}
 @media screen and (max-width: 600px) {
   .numbering {
     display: none;
+  }
+  .code-table,
+  .console {
+    font-size: 0.8rem;
   }
 }

@@ -18,9 +18,9 @@
     <nav class="menu">
       <a class="logo" href="self.html"><span>Моргунов</span><span>Роман</span></a>
       <div class="dropdown">
-        <a class="current-page"><span>C# и .Net Core</span></a>
+        <span class="manual-caption current-page">C# и .Net Core</span>
         <div class="dropdown-child">
-          <span class="manual-caption current-page">C# и .Net Core</span>
+          <a href="dotnet-main.html">Язык C# и платформа .NET Core</a>
           <a href="program-structure.html">Структура программы</a>
           <a href="data-types.html">Типы данных</a>
           <a href="arithmetic-operations.html">Арифметические операции</a>
@@ -218,6 +218,10 @@
           <div>17</div>
           <div>18</div>
           <div>19</div>
+          <div>20</div>
+          <div>21</div>
+          <div>22</div>
+          <div>23</div>
         </td>
         <td class="code">
           <div>
@@ -235,12 +239,12 @@
             <span class="csharp-comment">/*</span>
           </div>
           <div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="csharp-comment">программа, которая спрашивает у пользователя имя</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">программа, которая спрашивает имя</span>
           </div>
           <div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="csharp-comment">и выводит его в консоль</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">у пользователя и выводит его в консоль</span>
           </div>
           <div>
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -274,20 +278,26 @@
             <span class="csharp-class">Console</span>.<span class="csharp-func">Write</span>(<span
               class="csharp-text">"Введите свое имя: "</span>);
           </div>
+          <br>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">// вводим имя</span>
+          </div>
           <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="csharp-keyword">string</span>
             <span class="csharp-var">name</span> =
             <span class="csharp-class">Console</span>.<span class="csharp-func">ReadLine</span>();
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="csharp-comment">// вводим имя</span>
+          </div>
+          <br>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="csharp-comment">// выводим имя на консоль</span>
           </div>
           <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="csharp-class">Console</span>.<span class="csharp-func">WriteLine</span>(<span
               class="csharp-text">"Привет {0}"</span>, <span class="csharp-var">name</span>);
-            &nbsp;&nbsp;
-            <span class="csharp-comment">// выводим имя на консоль </span>
           </div>
           <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

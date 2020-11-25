@@ -31,11 +31,13 @@ h1 {
   font-family: "Montserrat", "sans-serif";
   font-weight: bold;
 }
+h2 {
+  font-size: 1.2rem;
+}
 h2,
-th {
+th .comparison-table {
   margin-top: 1rem;
 
-  font-size: 1.2rem;
   font-family: "Signika", "arial", "sans-serif";
   font-weight: bold;
 }
@@ -45,9 +47,6 @@ h3 {
   font-size: 1.1rem;
   font-family: "Signika", "arial", "sans-serif";
   font-weight: bold;
-}
-.text {
-  font-size: 0.85rem;
 }
 .comparison-table {
   border: 2px solid;
@@ -86,4 +85,20 @@ h3 {
 .pagination a:hover {
   background: #1b58b8;
   color: greenyellow;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 0.96rem;
+  }
+  h3,
+  .comparison-table th {
+    font-size: 0.88rem;
+  }
+  .text,
+  .comparison-table td {
+    font-size: 0.8rem;
+  }
 }

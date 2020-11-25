@@ -58,3 +58,111 @@ h2,
 #your-result {
   display: none;
 }
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Signika";
+  src: url("../fonts/Signika.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+body {
+  font-family: "Roboto", "arial", "sans-serif";
+  background: #eaedf1;
+  color: black;
+}
+footer {
+  padding: 0 1rem 1rem 1rem;
+}
+.content {
+  padding: 1rem 1rem;
+}
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Montserrat", "sans-serif";
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.2rem;
+}
+h2,
+th .comparison-table {
+  margin-top: 1rem;
+
+  font-family: "Signika", "arial", "sans-serif";
+  font-weight: bold;
+}
+h3 {
+  margin-top: 1rem;
+
+  font-size: 1.1rem;
+  font-family: "Signika", "arial", "sans-serif";
+  font-weight: bold;
+}
+.text {
+  font-size: 1rem;
+}
+.comparison-table {
+  border: 2px solid;
+  border-collapse: collapse;
+}
+.comparison-table th {
+  font-size: 1.1rem;
+  background: #569ce3;
+  border-bottom: 2px solid;
+}
+.comparison-table td {
+  padding: 0.1rem 0.5rem;
+
+  border-bottom: 1px solid #632f00;
+  background: #47cf74;
+}
+.pagination {
+  display: flex;
+
+  border: 3px solid #008287;
+}
+.pagination span {
+  border-right: 3px solid #008287;
+}
+.pagination a {
+  padding: 10px 0;
+  flex-grow: 1;
+
+  transition: 0.1s;
+  text-decoration: none;
+  font-family: "Lato", "sans-serif";
+  text-align: center;
+  background: #33495f;
+  color: white;
+}
+.pagination a:hover {
+  background: #1b58b8;
+  color: greenyellow;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  .question-info {
+    font-size: 0.72rem;
+  }
+  .question {
+    font-size: 1.2rem;
+  }
+  .your-result-caption {
+    font-size: 1.6rem;
+  }
+  .your-result-text {
+    font-size: 1.2rem;
+  }
+}
