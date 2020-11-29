@@ -10,10 +10,6 @@
   font-family: "Signika";
   src: url("../fonts/Signika.ttf") format("truetype");
 }
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/Lato-Regular.ttf") format("truetype");
-}
 .content,
 footer {
   width: 800px;
@@ -131,29 +127,6 @@ h3 {
 
   border-bottom: 1px solid #632f00;
   background: #47cf74;
-}
-.pagination {
-  display: flex;
-
-  border: 3px solid #008287;
-}
-.pagination span {
-  border-right: 3px solid #008287;
-}
-.pagination a {
-  padding: 10px 0;
-  flex-grow: 1;
-
-  transition: 0.1s;
-  text-decoration: none;
-  font-family: "Lato", "sans-serif";
-  text-align: center;
-  background: #33495f;
-  color: white;
-}
-.pagination a:hover {
-  background: #1b58b8;
-  color: greenyellow;
 }
 @media screen and (max-width: 600px) {
   h1 {

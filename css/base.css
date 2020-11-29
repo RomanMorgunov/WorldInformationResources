@@ -66,25 +66,30 @@ h3 {
 .pagination {
   display: flex;
 
-  border: 3px solid #008287;
+  border: 1px solid #464547;
+  border-radius: 4px;
 }
 .pagination span {
-  border-right: 3px solid #008287;
+  border-right: 1px solid #464547;
 }
 .pagination a {
   padding: 10px 0;
   flex-grow: 1;
 
-  transition: 0.1s;
+  transition: all 0.2s ease-in-out;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+
   text-decoration: none;
-  font-family: "Lato", "sans-serif";
+  font-family: "Montserrat", "sans-serif";
+  font-weight: bold;
   text-align: center;
-  background: #33495f;
-  color: white;
+  color: #464547;
 }
 .pagination a:hover {
-  background: #1b58b8;
-  color: greenyellow;
+  color: #3e8296;
 }
 @media screen and (max-width: 600px) {
   h1 {
