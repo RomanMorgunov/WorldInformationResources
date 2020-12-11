@@ -1,0 +1,8 @@
+.data-types-img {
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 700px) {
+  .data-types-img {
+    width: 100%;
+  }
+}

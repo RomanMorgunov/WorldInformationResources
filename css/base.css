@@ -69,24 +69,20 @@ h3 {
   border: 1px solid #464547;
   border-radius: 4px;
 }
-.pagination span {
+.pagination > span {
   border-right: 1px solid #464547;
 }
 .pagination a {
-  padding: 10px 0;
+  padding: 0.5rem 0;
   flex-grow: 1;
 
   transition: all 0.2s ease-in-out;
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-
   text-decoration: none;
   font-family: "Montserrat", "sans-serif";
   font-weight: bold;
   text-align: center;
   color: #464547;
+  font-size: 0.9rem;
 }
 .pagination a:hover {
   color: #3e8296;
@@ -105,5 +101,8 @@ h3 {
   .text,
   .comparison-table td {
     font-size: 0.8rem;
+  }
+  .pagination a {
+    font-size: 0.6rem;
   }
 }
